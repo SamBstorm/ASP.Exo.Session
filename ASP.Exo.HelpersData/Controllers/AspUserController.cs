@@ -1,4 +1,5 @@
 ﻿using ASP.Exo.HelpersData.Infrastructs;
+using ASP.Exo.HelpersData.Infrastructs.AuthAttributes;
 using ASP.Exo.HelpersData.Models;
 using ASP.Exo.HelpersData.Models.Views;
 using ASP.Exo.HelpersData.Services;
@@ -12,11 +13,15 @@ namespace ASP.Exo.HelpersData.Controllers
 {
     public class AspUserController : Controller
     {
+
+        [AnonymousUser]
         public ActionResult Register()
         {
             AspUserRegisterForm data = new AspUserRegisterForm();
             return View(data);
         }
+
+        [AnonymousUser]
         [HttpPost]
         public ActionResult Register(AspUserRegisterForm form)
         {
@@ -35,12 +40,13 @@ namespace ASP.Exo.HelpersData.Controllers
             }
         }
 
+        [AnonymousUser]
         public ActionResult Login()
         {
             AspUserLoginForm form = new AspUserLoginForm();
             return View(form);
         }
-
+        [AnonymousUser]
         [HttpPost]
         public ActionResult Login(AspUserLoginForm form)
         {
@@ -68,7 +74,7 @@ namespace ASP.Exo.HelpersData.Controllers
         {
             return View();
         }
-
+        [AuthentifiedUser]
         public ActionResult Logout()
         {
             Session.Abandon();

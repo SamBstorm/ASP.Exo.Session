@@ -124,6 +124,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructs\AuthAttributes\AnonymousUserAttribute.cs" />
+    <Compile Include="Infrastructs\AuthAttributes\AuthentifiedUserAttribute.cs" />
     <Compile Include="Infrastructs\CustomHtmlHelpers.cs" />
     <Compile Include="Infrastructs\CustomValidationDateAttribute.cs" />
     <Compile Include="Infrastructs\CustomValidationRegNationalAttribute.cs" />
